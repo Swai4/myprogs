@@ -55,6 +55,7 @@ def index(request):
         c["service_description"+str(s_count)] = service_description
 
         print(service_name , service_image)
+        print(c)
 
         s_count += 1
 
@@ -91,4 +92,6 @@ def index(request):
 
     return render(request, 'swaifolio/index.html', {'c': c})
 
+def anim(request):
 
+    return render(request, 'swaifolio/anim.html')

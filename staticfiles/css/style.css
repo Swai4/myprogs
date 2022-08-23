@@ -78,11 +78,75 @@ html{
     top: 30%;
     right: 10%;
 }
+.box-area li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 25px;
+    height: 25px;
+    background: rgba(8, 96, 131, 0.2);
+    animation: animate 20s linear infinite;
+    bottom: -150px;
+}
+.box-area li:nth-child(1){
+    left: 86%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+.box-area li:nth-child(2){
+    left: 12%;
+    width: 30px;
+    height: 30px;
+    animation-delay: 1.5s;
+    animation-duration: 10s;
+}
+
+.box-area li:nth-child(3){
+    left: 70%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 5.5s;
+}
+
+.box-area li:nth-child(4){
+    left: 42%;
+    width: 100px;
+    height: 100px;
+    animation-delay: 15s;
+}
+
+.box-area li:nth-child(5){
+    left: 65%;
+    width: 40px;
+    height: 40px;
+    animation-delay: 0s;
+}
+
+.box-area li:nth-child(6){
+    left: 15%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3.5s;
+}
+
+@keyframes animate{
+    0%{
+        transform: translateY(0) rotate(0deg) ;
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-800px) rotate(360deg);
+        opacity: 1;
+    }
+}
+
 .k{
-    color: rgb(59, 112, 112);
+    color: rgb(40, 28, 61);
 }
 .ip{
-    color: #300c30;
+    color: #a09f91;
 }
 .ng{
     color: #125480;
@@ -105,11 +169,12 @@ html{
     text-align: center;
     margin: 40px 0px;
 }
+
 .headings{
-    font-family: century;
-    font-size: 3rem;
-    text-align: center;
-    margin: 40px 0px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5rem;
+    text-align: left;
+    margin: 15px 0px;
 }
 .btn{
     color: rgb(10, 66, 99);
@@ -121,7 +186,23 @@ html{
     border-radius: 30px;
     transition: transform .4s;
 }
+.btn-sub{
+    color: rgb(99, 10, 47);
+    background-color:#221592 ;
+    border: 2px solid transparent;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: transform .4s;
+
+
+    
+}
 .btn:hover{
+    transform: scale(1.2);
+}
+.btn-sub:hover{
     transform: scale(1.2);
 }
 
@@ -133,7 +214,7 @@ html{
     box-sizing: border-box;
     padding: 20px;
     margin-bottom: 50px;
-    background: linear-gradient(rgba(92, 50, 50, 0.5),#08132b);
+    background: linear-gradient(rgba(180, 166, 166, 0.5),#08132b);
 }
 #pic{
     display: flex;
@@ -179,8 +260,8 @@ html{
     display: flex;
     flex-direction: column;
     padding: 20px;
-    background: linear-gradient(rgba(43, 41, 41, 0.199),#3a043a);
-    background-color: rgba(110, 56, 56, 0.438);
+    background: linear-gradient(rgba(43, 41, 41, 0.199),#752520);
+    background-color: rgba(14, 143, 104, 0.438);
 }
 .row{
     display: flex;
@@ -191,8 +272,8 @@ html{
 .box{
     display: flex;
     flex-direction: column;
-    width: 350px;
-    height: 450px;
+    width: 250px;
+    height: 350px;
     border: 1px solid black;
     margin: 10px;
     align-items: center;
@@ -217,7 +298,7 @@ html{
 
 /* Skill Section */
 #skills{
-    background: linear-gradient(rgba(93, 161, 116, 0.5),#545e50);
+    background: linear-gradient(rgba(44, 22, 34, 0.5),#34741b);
 }
 
 .skill_container{
@@ -233,8 +314,8 @@ html{
 .skill_container .skilli{
     display: flex;
     flex-direction: row;
-    width: 250px;
-    height: 350px;
+    width: 150px;
+    height: 250px;
     border: 1px solid black;
     margin: 10px;
     align-items: center;
@@ -275,6 +356,15 @@ html{
     border: none;
     outline: none;
 }
+.form-group{
+    padding: 10px;
+}
+
+label {
+    width: 400px;;
+    display: inline-block;
+}
+
 #msg{
     width: 20%;
     padding: 10px;

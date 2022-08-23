@@ -13,8 +13,9 @@
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
         <link rel="stylesheet" href="{% static 'css/phone.css' %}">
         <link rel="stylesheet" media="screen and (max-width:800px)" href="{% static 'css/tablet.css' %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     </head>
-        <body>
+        <body style="background-color:#302d2f ;z-index: -1;opacity: .7;">
 
             <nav class="navbar">
                 <ul>
@@ -24,20 +25,21 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="{% url 'folio-anim' %}">Anim</a></li>
+                    <li>
+                    {{ message }}
+                    {% if messages %}
+                    {% for message in messages %}
+                            <i>{{ message }}!</i>
+                    {% endfor %}
+                    {% endif %}
+                    </li>
                 </ul>
             </nav>
-
-            {{ message }}
-            {% if messages %}
-            {% for message in messages %}
             
-                <i>{{ message }}!</i>
             
-            {% endfor %}
-            {% endif %}
 
             <section id="home">
-                
                 <div class="main">
                     <h2>Hello and Hi.</h2>
                     <h1 class="xheadings"> I AM <br><span class="k">K</span><span class="ip">ip</span><span class="ng">ng'</span><span class="et">et</span><span class="ich">ich</span> <span class="s">S</span>w<span class="ai">ai</span><br></h1>
@@ -47,12 +49,20 @@
                     <a href="{{ MEDIA_URL }}{{c.cv}}" target="_blank"><button class="btn" >
                         Want to Hire me? Download CV
                     </button></a>
+                <ul class="box-area">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
                 </div>
 
             </section>
 
             <section id="about">
-                <h1 class="headings">About Me</h1>
+                <h1 class="xheadings">About Me</h1>
                 <div id="pic">
                     <a href="{% static '/mimg/swai44.jpg' %}" target="_blank"><img src="{% static '/mimg/swai44.jpg' %}" alt=""></a>
                     <div id="intro">
@@ -67,7 +77,7 @@
             </section>
 
             <section id="portfolio">
-                <h1 class="headings"> PORTFOLIO </h1>
+                <h1 class="xheadings"> PORTFOLIO </h1>
                 <div class="gallery">
                     <a href="#"><img src="{% static 'blogfolio/blogapipostlist.png' %}" alt=""></a>
                     <a href="#"><img src="{% static 'blogfolio/blog.png' %}" alt=""></a>
@@ -79,38 +89,62 @@
             </section>
 
             <section id="services">
-                <h1 class="headings">SERVICES</h1>
+                <h1 class="xheadings">SERVICES</h1>
                 <div class="row">
                     <div class="box">
-                        <img src="{% static 'skill/key-skill-icon-1.svg' %}" alt="">
-                        <h1 class="headings">Website Design</h1>
-                        <p>I write God tier HTML and CSS to provide webpages smooth and <br>responsive interfaces.I design very intuitive <br>and mind blowing webpages that make the web user want <br>to surf the pages the whole day and night.
+                        <img src="{{ c. }}" alt="">
+                        <h1 class="headings">{{ c.service_name7 }}</h1>
+                        <p>{{ c.service_description7|truncatechars:150|urlize }}
                         </p>
                     </div>
                     <div class="box">
                         <img src="{% static 'skill/key-skill-icon-2.svg' %}" alt="">
-                        <h1 class="headings">Networking</h1>
-                        <p>I have expertise and skills in cabling and truncking of 
-                        Internal network which connect to the Internet and routing web servers 
-                        which run software infrastructure e.g portals and systems
-                        ,integrated file sharing computers, 
-                        CCTVs, other IoT devices. I also service and troubleshoot <br>networks, configure VPNs and Firewalls.
+                        <h1 class="headings">{{ c.service_name6 }}</h1>
+                        <p>{{ c.service_description6|truncatechars:150|urlize }}
                         </p>
                     </div>
                     <div class="box">
                         <img src="{% static 'skill/key-skill-icon-3.svg' %}" alt="">
-                        <h1 class="headings">Django backend</h1>
-                        <p>I write backend logic for websites and also frontend
-                        apps that do consume API from the webserver and SQL database.
+                        <h1 class="headings">{{ c.service_name5 }}</h1>
+                        <p>{{ c.service_description5|truncatechars:150|urlize }}
                         </p>
                     </div>
-                    
+                    <div class="box">
+                        <img src="{% static 'skill/key-skill-icon-2.svg' %}" alt="">
+                        <h1 class="headings">{{ c.service_name4 }}</h1>
+                        <p>{{ c.service_description4|truncatechars:150|urlize }}
+                        </p>
+                    </div>
+                    <div class="box">
+                        <img src="{% static 'skill/key-skill-icon-2.svg' %}" alt="">
+                        <h1 class="headings">{{ c.service_name3 }}</h1>
+                        <p>{{ c.service_description3|truncatechars:150|urlize }}
+                        </p>
+                    </div>
+                    <div class="box">
+                        <img src="{% static 'skill/key-skill-icon-2.svg' %}" alt="">
+                        <h1 class="headings">{{ c.service_name2 }}</h1>
+                        <p>{{ c.service_description2|truncatechars:150|urlize }}
+                        </p>
+                    </div>
+                    <div class="box">
+                        <img src="{% static 'skill/key-skill-icon-2.svg' %}" alt="">
+                        <h1 class="headings">{{ c.service_name1 }}</h1>
+                        <p>{{ c.service_description1|truncatechars:150|urlize }}
+                        </p>
+                    </div>
+                    <div class="box">
+                        <img src="{% static 'skill/key-skill-icon-2.svg' %}" alt="">
+                        <h1 class="headings">{{ c.service_name0 }}</h1>
+                        <p>{{ c.service_description0|truncatechars:150|urlize }}
+                        </p>
+                    </div>
                 </div>
             </section>
 
             <section id="skills">
 
-                <h1 class="headings">My Skills</h1>
+                <h1 class="xheadings">My Skills</h1>
                 <div class="skill_container">
                     <div class="skilli">
                         <img class="svg" src="{{ MEDIA_URL }}/svg/python.svg">
@@ -146,16 +180,20 @@
             </section>
 
             <section id="contact">
-                <h1 class="headings">CONTACT</h1>
-                <form action="#" method="post" class="form">{% csrf_token %}
-                    <label>
-                        {{c.form.name}}
-                    </label>
+                
+                <h1 class="xheadings">CONTACT</h1>
+                <form class="fm" action="#" method="post" class="form">{% csrf_token %}
+                    {% for field in c.form %}
+                        <div class="form-group">
+                            {{ field.label_tag }}
+                            {{ field }}
+                            {% if field.help_text %}
+                                <small class="form-text text-muted">{{ field.help_text }}</small>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                    <button type="submit" class="btn-sub">Submit</button>
                     
-                    <label>
-                        {{c.form.email}}
-                    </label>
-                    <input type="submit" value="SEND" id="send">
                 </form>
 
             </section>

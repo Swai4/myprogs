@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'swaifolio',
-    #'swaifolio.apps.SwaifolioConfig',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
