@@ -1,5 +1,14 @@
 from django import forms
-from .models import Contact
+from django_svg_image_form_field import SvgAndImageFormField
+from .models import Profile , Contact, Portfolio, Services, Skill
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        exclude = []
+        field_classes = {
+            'avatar': SvgAndImageFormField,
+        }
 
 class ContactForm(forms.ModelForm):
 
@@ -32,3 +41,31 @@ class ContactForm(forms.ModelForm):
         widget=forms.Textarea(attrs={'style': 'border-color: orange;'}),
         #help_text='Write here your message!'
     )
+
+
+class PortfolioForm(forms.ModelForm):
+    class Meta:
+        model = Portfolio
+        exclude = []
+        field_classes = {
+            'image': SvgAndImageFormField,
+        }
+
+
+class ServicesForm(forms.ModelForm):
+    class Meta:
+        model = Services
+        exclude = []
+        field_classes = {
+            'image': SvgAndImageFormField,
+        }
+
+
+class SkillForm(forms.ModelForm):
+    class Meta:
+        model = Skill
+        exclude = []
+        field_classes = {
+            'image': SvgAndImageFormField,
+        }
+    

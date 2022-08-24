@@ -91,7 +91,3 @@ def index(request):
     c['form'] = form
 
     return render(request, 'swaifolio/index.html', {'c': c})
-
-def anim(request):
-
-    return render(request, 'swaifolio/anim.html')

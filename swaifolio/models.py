@@ -13,16 +13,6 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.user.first_name} {self.user.last_name}'
     
-    def save(self, *args, **kwargs):
-        super(Profile, self).save(*args, **kwargs)
-
-        img = Image.open(self.avatar.path)
-
-        if img.height > 300 or img.width > 300:
-            output_size = (100,100)
-            img.thumbnail(output_size)
-            img.save(self.avatar.path)
-
 
 
 class Contact(models.Model):
@@ -51,35 +41,6 @@ class Portfolio(models.Model):
     image = models.ImageField(blank=True, null=True, upload_to="portfolio")
     fk = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     slug = models.SlugField(null=True, blank=True)
-    
-
-    def save(self, *args, **kwargs):
-        if not self.id:
-            self.slug = slugify(self.name)
-        super(Portfolio, self).save(*args, **kwargs)
-        
-        img = Image.open(self.image.path)
-
-        if img.height > 300 or img.width > 300:
-            output_size = (100,100)
-            img.thumbnail(output_size)
-            img.save(self.image.path)
-
-    def __str__(self):
-        return self.name
-
-    def get_absolute_url(self):
-        return f'/portfolio/{self.slug}'
-
-    def save(self, *args, **kwargs):
-        super(Profile, self).save(*args, **kwargs)
-
-        img = Image.open(self.image.path)
-
-        if img.height > 300 or img.width > 300:
-            output_size = (100,100)
-            img.thumbnail(output_size)
-            img.save(self.image.path)
 
 
 class Services(models.Model):
@@ -95,15 +56,6 @@ class Services(models.Model):
     def __str__(self):
         return self.name
 
-    def save(self, *args, **kwargs):
-        super(Services, self).save(*args, **kwargs)
-
-        img = Image.open(self.image.path)
-
-        if img.height > 300 or img.width > 300:
-            output_size = (100,100)
-            img.thumbnail(output_size)
-            img.save(self.image.path)
 
 class Skill(models.Model):
 
@@ -115,12 +67,13 @@ class Skill(models.Model):
     def __str__(self):
         return self.name
 
-    def save(self, *args, **kwargs):
-        super(Skill, self).save(*args, **kwargs)
-
-        img = Image.open(self.image.path)
-
-        if img.height > 300 or img.width > 300:
-            output_size = (100,100)
-            img.thumbnail(output_size)
-            img.save(self.image.path)
+#for use with PIL
+#def save(self, *args, **kwargs):
+#        super(Profile, self).save(*args, **kwargs)
+#
+#        img = Image.open(self.avatar.path)
+#
+#        if img.height > 300 or img.width > 300:
+#            output_size = (100,100)
+#            img.thumbnail(output_size)
+#            img.save(self.avatar.path)
