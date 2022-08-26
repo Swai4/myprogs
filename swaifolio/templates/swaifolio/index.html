@@ -42,8 +42,9 @@
                     <h2>Hello and Hi.</h2>
                     <h1 class="xheadings"> I AM <br><span class="k">K</span><span class="ip">ip</span><span class="ng">ng'</span><span class="et">et</span><span class="ich">ich</span> <span class="s">S</span>w<span class="ai">ai</span><br></h1>
                     <h2> </h2>
-                    <h3>A Web Developer,<br> <br>Pythonista,<br> <br>Front End Developer<br> <br>and a Computer GEEK!<br> <br></h3>
+                    <!--<h3>A Web Developer,<br> <br>Pythonista,<br> <br>Front End Developer<br> <br>and a Computer GEEK!<br> <br></h3>-->
                     
+                    <p class="hero-subtitle"><span class="typed" data-typed-items="A Web Developer, Pythonista, Front End Developer, and a Computer GEEK"></span></p>
                     <a href="{{ MEDIA_URL }}{{c.cv}}" target="_blank"><button class="btn" >
                         Want to Hire me? Download CV
                     </button></a>
@@ -151,31 +152,30 @@
                 <h1 class="xheadings">My Skills</h1>
                 <div class="skill_container">
                     <div class="skilli">
-                        <img class="svg" src="{{ MEDIA_URL }}/svg/python.svg">
+                        <img src="{{c.skill_image1.url}}" alt="">
                     </div>
                     <div class="skilli">
-                        <img class="svg" src="{{ MEDIA_URL }}/svg/djangologo.svg">  
+                        <img src="{{c.skill_image2.url}}" alt="">
                     </div>
                     <div class="skilli">
-                        <img class="svg" src="{{ MEDIA_URL }}/svg/webhos.png">   
+                        <img src="{{c.skill_image3.url}}" alt="">  
                     </div>
                     <div class="skilli">
-                        <img class="svg" src="{{ MEDIA_URL }}/svg/rest.svg">
+                        <img src="{{c.skill_image4.url}}" alt="">
                     </div>
                     <div class="skilli">
-                        <img class="svg" src="{{ MEDIA_URL }}/svg/linuxicon.svg">
+                        <img src="{{c.skill_image5.url}}" alt="">
                     </div>
                     <div class="skilli">
-                        <img class="svg" src="{{ MEDIA_URL }}/svg/sqlicon.svg">
+                        <img src="{{c.skill_image6.url}}" alt="">
+                    <div class="skilli">
+                        <img src="{{c.skill_image7.url}}" alt="">
                     </div>
                     <div class="skilli">
-                        <img class="svg" src="{{ MEDIA_URL }}/svg/msoffice.svg">
+                        <img src="{{c.skill_image8.url}}" alt="">
                     </div>
                     <div class="skilli">
-                        <img class="svg" src="{{ MEDIA_URL }}/svg/chatdeal.svg">
-                    </div>
-                    <div class="skilli">
-                        <img class="svg" src="{{ MEDIA_URL }}/svg/windowsos.svg">
+                        <img src="{{c.skill_image9.url}}" alt="">
                     </div>
                             
 
