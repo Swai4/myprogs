@@ -14,25 +14,27 @@
         <link rel="stylesheet" href="{% static 'css/phone.css' %}">
         <link rel="stylesheet" media="screen and (max-width:800px)" href="{% static 'css/tablet.css' %}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
         <body style="background-color:#302d2f ;z-index: -1;opacity: .7;">
 
             <nav class="navbar">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    {{ message }}
-                    {% if messages %}
-                    {% for message in messages %}
-                            <i>{{ message }}!</i>
-                    {% endfor %}
-                    {% endif %}
-                    </li>
-                </ul>
+                <div class="nav-tittle">Resume</div>
+                <a href="#" class="toogle-button">
+                    <span class="barr"></span>
+                    <span class="barr"></span>
+                    <span class="barr"></span>
+                </a>
+                <div class="navbar-links">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
             </nav>
             
             
@@ -63,9 +65,14 @@
             <section id="about">
                 <h1 class="xheadings">About Me</h1>
                 <div id="pic">
-                    <a href="{% static '/mimg/swai44.jpg' %}" target="_blank"><img src="{% static '/mimg/swai44.jpg' %}" alt=""></a>
+                    <a class="swaipic" href="{% static '/mimg/swai44.jpg' %}" target="_blank">
+                        <div class="work-img">
+                            <img src="{% static '/mimg/swai44.jpg' %}" alt="">
+                        </div>
+                    </a>
                     <div id="intro">
-                        <h2>{{C.profile}}</h2>
+                        <h2>{{c.profile}}
+                        </h2>
                         <p>{{ c.about }} 
                         </p>
 
@@ -88,7 +95,7 @@
             </section>
 
             <section id="services">
-                <h1 class="xheadings">SERVICES</h1>
+                <h1 class="xheadings">SERVICES & SKILLS</h1>
                 <div class="row">
                     <div class="box">
                         <img src="{{c.service_image9.url}}" alt="">
@@ -201,6 +208,27 @@
                 </form>
 
             </section>
+
+
+            <footer>
+
+                <div class="footer-content">
+
+                    <h3>Swai Kipngetich</h3>
+                    <p>A developer you can trust.</p>
+                    <ul class="socials">
+                        <li><a href="#"><i class="fa fa-github"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                        <li><a href="#"><i class="fa fa-phone"></i></a></li>
+                    </ul>
+
+                </div>
+                <div class="footer-bottom">
+                    <p>Copyright &copy;2020 Swai4. designed by <span>Swai Kipngetich</span></p>
+                </div>
+
+            </footer>
 
             
 

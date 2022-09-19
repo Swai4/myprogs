@@ -26,7 +26,7 @@ class ContactForm(forms.ModelForm):
         widget=forms.TextInput(
             attrs={
                 'style': 'border-color: blue;',
-                #'placeholder': 'Write your name here'
+                'placeholder': 'Write your name here'
             }
         )
     )
@@ -39,7 +39,7 @@ class ContactForm(forms.ModelForm):
     message = forms.CharField(
         max_length=2000,
         widget=forms.Textarea(attrs={'style': 'border-color: orange;'}),
-        #help_text='Write here your message!'
+        help_text='What can I do you for?!'
     )
 
 

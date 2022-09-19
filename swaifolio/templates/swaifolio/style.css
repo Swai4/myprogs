@@ -31,7 +31,7 @@ html{
 }
 
 .navbar ul li a{
-    text-decoration: none;
+    text-decoration: underline;
     color: white;
     padding: 8px 25px;
     transition: all .5s ease;
