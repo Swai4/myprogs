@@ -26,20 +26,20 @@ class ContactForm(forms.ModelForm):
         widget=forms.TextInput(
             attrs={
                 'style': 'border-color: blue;',
-                'placeholder': 'Write your name here'
+                'placeholder': 'Write your name here...'
             }
         )
     )
 
     email = forms.EmailField(
         max_length=254,
-        widget=forms.EmailInput(attrs={'style': 'border-color: green;'})
+        widget=forms.EmailInput(attrs={'style': 'border-color: green;','placeholder': 'Enter Email...'})
     )
 
     message = forms.CharField(
         max_length=2000,
-        widget=forms.Textarea(attrs={'style': 'border-color: orange;'}),
-        help_text='What can I do you for?!'
+        widget=forms.Textarea(attrs={'style': 'border-color: orange;', 'placeholder': 'Talk to me. What can I do you for?...'}),
+        #help_text='What can I do you for?!'
     )
 
 

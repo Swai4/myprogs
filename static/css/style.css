@@ -70,7 +70,7 @@ html{
         display: flex;
     }
     .navbar-links{
-        display: none;
+        /*display: none;*/
     }
     .navbar{
         flex-direction: column;
@@ -79,6 +79,7 @@ html{
     .navbar-links ul{
         flex-direction: column;
         width: 100%;
+        top: 10%;
     }
 }
 
