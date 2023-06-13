@@ -19,7 +19,7 @@
         <body style="background-color:#302d2f ;z-index: -1;opacity: .7;">
 
             <nav class="navbar">
-                <div class="nav-tittle">Resume</div>
+                
                 <a href="#" class="toogle-button">
                     <span class="barr"></span>
                     <span class="barr"></span>
@@ -33,6 +33,7 @@
                         <li><a href="#services">Services</a></li>
                         <!--<li><a href="#skills">Skills</a></li>-->
                         <li><a href="#contact">Contact</a></li>
+                        <li><a href="{% url 'post_list' %}" target="_blank">Blog</a></li>
                     </ul>
                 </div>
             </nav>
@@ -196,6 +197,18 @@
             <section id="contact">
                 
                 <h1 class="xheadings">CONTACT</h1>
+                {{ message }}
+                {% if messages %}
+                {% for message in messages %}
+
+                <div class="text-center">
+                        <div class="new_user_banner">
+                            <i>{{ message }}!</i>
+                        </div>    
+                </div>
+            
+                {% endfor %}
+                {% endif %}
                 <form class="fm" action="#" method="post" class="form">{% csrf_token %}
                     {% for field in c.form %}
                         <div class="form-group">
