@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'swaifolio',
-    'blog',
     'widget_tweaks',
 ]
 
